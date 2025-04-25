@@ -199,55 +199,62 @@ document.getElementById('go').addEventListener('click', async () => {
 });
 
 // ----------------------------------------------------------------------------
-// Guillotine‐style pack for one layer, with true two‐orientation best‐fit
+// Guillotine‐style pack for one layer, picking orientation per‐slot
 function packLayer(boxes) {
   const free    = [{ x:0, y:0, w:PALLET_L, h:PALLET_W }];
   const placed  = [];
   let notPlaced = boxes.slice();
 
   boxes.forEach(b => {
-    // Determine which orientation yields more potential fits
-    const L = b.dims.l, W = b.dims.w;
-    const countA = Math.floor(PALLET_L / L) * Math.floor(PALLET_W / W);
-    const countB = b.canRotate
-      ? Math.floor(PALLET_L / W) * Math.floor(PALLET_W / L)
-      : -1;
+    const { l: L, w: W } = b.dims;
+    // build orientation options
+    const opts = [{ l: L, w: W }];
+    if (b.canRotate) opts.push({ l: W, w: L });
 
-    const opts = countB > countA
-      ? [{ l:W, w:L }, { l:L, w:W }]
-      : [{ l:L, w:W }].concat(b.canRotate ? [{ l:W, w:L }] : []);
-
-    // Find a free slot
     let fit = null;
+    // for each free rectangle, try to fit
     for (const r of free) {
-      for (const d of opts) {
-        if (d.l <= r.w && d.w <= r.h) {
-          fit = { rect: r, dims: d };
-          break;
-        }
-      }
-      if (fit) break;
-    }
-    if (!fit) return;
+      // sort orientations by minimal waste area in this r
+      const local = opts
+        .map(d => ({
+          dims: d,
+          waste: (r.w - d.l) * (r.h - d.w)
+        }))
+        .filter(x => x.dims.l <= r.w && x.dims.w <= r.h)
+        .sort((a, b) => a.waste - b.waste);
 
-    // Place it
-    placed.push({ box:b, x:fit.rect.x, y:fit.rect.y, dims:fit.dims });
+      if (local.length) {
+        fit = { rect: r, dims: local[0].dims };
+        break;
+      }
+    }
+    if (!fit) return;           // no fit in any free
+
+    // place box
+    placed.push({ box: b, x: fit.rect.x, y: fit.rect.y, dims: fit.dims });
     free.splice(free.indexOf(fit.rect), 1);
 
-    // Carve out right region
+    // carve out the right sub‐region
     free.push({
       x: fit.rect.x + fit.dims.l,
       y: fit.rect.y,
       w: fit.rect.w - fit.dims.l,
       h: fit.dims.w
     });
-    // Carve out top region
+    // carve out the top sub‐region
     free.push({
       x: fit.rect.x,
       y: fit.rect.y + fit.dims.w,
       w: fit.rect.w,
       h: fit.rect.h - fit.dims.w
     });
+
+    // remove from notPlaced
+    notPlaced = notPlaced.filter(x => x !== b);
+  });
+
+  return { placed, notPlaced };
+}
 
     // Remove from notPlaced
     notPlaced = notPlaced.filter(x => x !== b);
