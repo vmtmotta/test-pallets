@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch(`products-detail.json?cb=${Date.now()}`);
     products = await res.json();
+    console.log('MASTER DATA loaded, SKUs:', Object.keys(products).length);
   } catch (e) {
     console.error('Error loading products-detail.json', e);
     alert('Could not load product master data.');
@@ -30,8 +31,7 @@ document.getElementById('go').addEventListener('click', async () => {
   // 2) Read workbook & first sheet
   const buf = await fileIn.files[0].arrayBuffer();
   const wb  = XLSX.read(buf, { type:'array' });
-  const sheetName = wb.SheetNames[0];
-  const ws = wb.Sheets[sheetName];
+  const ws  = wb.Sheets[wb.SheetNames[0]];
 
   // 3) Get all rows as arrays
   const rows = XLSX.utils.sheet_to_json(ws, {
@@ -40,7 +40,7 @@ document.getElementById('go').addEventListener('click', async () => {
     blankrows: false
   });
 
-  // 4) Detect header row (looking for REF, PRODUCT, BOX USED..., ORDER IN UNITS)
+  // 4) Detect header row
   const labels = [
     'REF',
     'PRODUCT',
@@ -67,17 +67,14 @@ document.getElementById('go').addEventListener('click', async () => {
     return alert('Could not find header row with REF / PRODUCT / BOX USED / ORDER IN UNITS.');
   }
 
-  // 5) Parse orders from rows[h+1...] until blank REF, only valid SKUs
+  // 5) Parse orders
   const orders = [];
   for (let i = h + 1; i < rows.length; i++) {
-    const r  = rows[i];
-    const raw= r[ci.REF];
-    if (raw == null || raw.toString().trim() === '') break;
+    const r   = rows[i];
+    const raw = r[ci.REF];
+    if (!raw || !raw.toString().trim()) break;
     const sku = raw.toString().trim();
-    if (!products[sku]) {
-      // skip any calibration or unknown rows
-      continue;
-    }
+    if (!products[sku]) continue;
     orders.push({
       sku,
       name:   r[ci.PROD]?.toString().trim() || sku,
@@ -89,32 +86,37 @@ document.getElementById('go').addEventListener('click', async () => {
     return document.getElementById('output').innerHTML =
       '<p><em>No valid order lines found. Check your file.</em></p>';
   }
+  console.log('ORDERS:', orders);
 
   // 6) Expand each order into individual box instances
   let instances = [];
   orders.forEach(o => {
-  const pd   = products[o.sku];
-  const spec = pd[o.boxKey];
-  if (!spec || !spec.units) return;
-  const count = Math.ceil(o.units / spec.units);
-  const [L, D, H] = spec.dimensions;
-  for (let k = 0; k < count; k++) {
-    instances.push({
-      sku:       o.sku,
-      name:      o.name,
-      fragility: pd.fragility.toLowerCase(),
-      weight:    spec.weight,
-      dims:      { l: L, w: D, h: H },
-      canRotate: true,    // <— here
-    });
-  }
-});
+    const pd   = products[o.sku];
+    const spec = pd[o.boxKey];
+    if (!spec || !spec.units) {
+      console.warn(`Missing box spec for ${o.sku} → ${o.boxKey}`);
+      return;
+    }
+    const count = Math.ceil(o.units / spec.units);
+    const [L, D, H] = spec.dimensions;
+    for (let k = 0; k < count; k++) {
+      instances.push({
+        sku:       o.sku,
+        name:      o.name,
+        fragility: pd.fragility.toLowerCase(),
+        weight:    spec.weight,
+        dims:      { l: L, w: D, h: H },
+        canRotate: true    // ← ALLOW ROTATION FOR EVERY PRODUCT
+      });
+    }
+  });
+  console.log('INSTANCES (boxes to pack):', instances.length, instances);
   if (!instances.length) {
     return document.getElementById('output').innerHTML =
       '<p><em>No boxes to pack after expansion.</em></p>';
   }
 
-  // 7) Sort by fragility (strong → medium → fragile)
+  // 7) Sort by fragility
   const fragOrder = { strong:0, medium:1, fragile:2 };
   instances.sort((a,b) => fragOrder[a.fragility] - fragOrder[b.fragility]);
 
@@ -123,7 +125,6 @@ document.getElementById('go').addEventListener('click', async () => {
   while (remaining.length) {
     let usedH = 0, usedWT = PALLET_WT;
     const pal = { layers: [] };
-
     while (remaining.length) {
       const { placed, notPlaced } = packLayer(remaining);
       if (!placed.length) break;
@@ -181,8 +182,8 @@ document.getElementById('go').addEventListener('click', async () => {
     });
 
     html += `<p><strong>Summary pallet ${idx+1}:</strong>
-      ${pUnits} units | ${pBoxes} Boxes | 
-      Total Weight: ${pWT.toFixed(1)} Kg | 
+      ${pUnits} units | ${pBoxes} Boxes |
+      Total Weight: ${pWT.toFixed(1)} Kg |
       Total Height: ${pH} cm</p>`;
 
     totalBoxes += pBoxes;
@@ -219,10 +220,9 @@ function packLayer(boxes) {
     placed.push({ box:b, x:fit.rect.x, y:fit.rect.y, dims:fit.dims });
     free.splice(free.indexOf(fit.rect), 1);
     free.push(
-      { x: fit.rect.x + fit.dims.l, y: fit.rect.y,       w: fit.rect.w - fit.dims.l, h: fit.dims.w },
-      { x: fit.rect.x,            y: fit.rect.y + fit.dims.w, w: fit.rect.w,             h: fit.rect.h - fit.dims.w }
+      { x:fit.rect.x+fit.dims.l, y:fit.rect.y, w:fit.rect.w-fit.dims.l, h:fit.dims.w },
+      { x:fit.rect.x, y:fit.rect.y+fit.dims.w, w:fit.rect.w, h:fit.rect.h-fit.dims.w }
     );
-
     notPlaced = notPlaced.filter(x => x !== b);
   });
 
