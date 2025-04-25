@@ -8,37 +8,30 @@
   <!-- XLSX library -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 
-  <!-- Table styling -->
-<style>
-  /* Make the output area scroll if the table is wider than the viewport */
-  #output {
-    overflow-x: auto;
-    white-space: nowrap; /* prevent container from wrapping the table */
-  }
-
-  /* Render the table as inline-table so its width = content */
-  table {
-    display: inline-table;
-    table-layout: auto;      /* size columns to their content */
-    border-collapse: collapse;
-  }
-
-  /* Borders and padding */
-  th, td {
-    border: 1px solid #666;
-    padding: 8px;
-    white-space: nowrap;     /* no wrap by default, so width = longest text */
-  }
-
-  /* Allow wrapping in Product column (2nd col) if very long */
-  th:nth-child(2),
-  td:nth-child(2) {
-    white-space: normal;
-    word-break: break-word;
-    /* you can optionally set a min-width if desired */
-  }
-</style>
-
+  <style>
+    /* Make the output area scroll if the table is wider than the viewport */
+    #output {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    /* Inline-table so columns size to content */
+    table {
+      display: inline-table;
+      table-layout: auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #666;
+      padding: 8px;
+      white-space: nowrap;
+    }
+    /* Allow wrapping in the Product column */
+    th:nth-child(2),
+    td:nth-child(2) {
+      white-space: normal;
+      word-break: break-word;
+    }
+  </style>
 </head>
 <body>
   <h1>Upload Order</h1>
@@ -53,7 +46,7 @@
 
   <div id="output" style="margin-top:20px;"></div>
 
-  <!-- Your app code -->
+  <!-- Main app script -->
   <script src="app.js"></script>
 </body>
 </html>
