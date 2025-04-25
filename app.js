@@ -103,13 +103,14 @@ document.getElementById('go').addEventListener('click', async () => {
     const [L, D, H] = spec.dimensions;
     for (let k = 0; k < count; k++) {
       instances.push({
-        sku: o.sku,
-        name: o.name,
-        fragility: pd.fragility.toLowerCase(),
-        weight:    spec.weight,
-        dims:      { l: L, w: D, h: H },
-        canRotate: spec.orientation.toLowerCase() === 'both'
-      });
+  sku:       o.sku,
+  name:      o.name,
+  fragility: pd.fragility.toLowerCase(),
+  weight:    spec.weight,
+  dims:      { l:L, w:D, h:H },
+- canRotate: spec.orientation.toLowerCase() === 'both'
++ canRotate: true
+});
     }
   });
   if (!instances.length) {
