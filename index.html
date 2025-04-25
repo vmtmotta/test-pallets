@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pallet Optimizer</title>
+
+  <!-- XLSX library -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <!-- Table styling -->
+<style>
+  /* Make the output area scroll if the table is wider than the viewport */
+  #output {
+    overflow-x: auto;
+    white-space: nowrap; /* prevent container from wrapping the table */
+  }
+
+  /* Render the table as inline-table so its width = content */
+  table {
+    display: inline-table;
+    table-layout: auto;      /* size columns to their content */
+    border-collapse: collapse;
+  }
+
+  /* Borders and padding */
+  th, td {
+    border: 1px solid #666;
+    padding: 8px;
+    white-space: nowrap;     /* no wrap by default, so width = longest text */
+  }
+
+  /* Allow wrapping in Product column (2nd col) if very long */
+  th:nth-child(2),
+  td:nth-child(2) {
+    white-space: normal;
+    word-break: break-word;
+    /* you can optionally set a min-width if desired */
+  }
+</style>
+
+</head>
+<body>
+  <h1>Upload Order</h1>
+  <label>
+    Customer:
+    <input id="customer" type="text" placeholder="Customer name" />
+  </label>
+  <br /><br />
+  <input id="fileInput" type="file" accept=".xlsx" />
+  <br /><br />
+  <button id="go">Upload & Optimize</button>
+
+  <div id="output" style="margin-top:20px;"></div>
+
+  <!-- Your app code -->
+  <script src="app.js"></script>
+</body>
+</html>
