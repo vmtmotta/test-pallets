@@ -1,0 +1,2886 @@
+{
+  "JG.AZ.008": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        34
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.022": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        35
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.039": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        36
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.046": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        37
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.750": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        38
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.781": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 4.52,
+      "dimensions": [
+        24
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.798": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 4.52,
+      "dimensions": [
+        24
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.767": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 4.52,
+      "dimensions": [
+        24
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.774": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 4.52,
+      "dimensions": [
+        24
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.AZ.922": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 4.52,
+      "dimensions": [
+        24
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.VI.015": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        37
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.VI.053": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 5.8,
+      "dimensions": [
+        34,
+        18,
+        37
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CO.305": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.312": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.329": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.811": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.405": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.336": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.435": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.442": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.428": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.842": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.859": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.375": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.343": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.320": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.382": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.459": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.354": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.644": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.299": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.350": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.276": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.283": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.736": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.404": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.411": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.203": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.290": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.306": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.399": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.804": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.374": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.4,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.6,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.651": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.367": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.059": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.558": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.313": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.323": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.CO.347": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "JG.PACK.CO.01": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 6.920000000000001,
+      "dimensions": [
+        28,
+        22,
+        25
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.PA.909": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.916": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.923": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.954": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.961": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.978": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.947": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.309": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.293": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.286": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.866": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.429": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PA.175": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "JG.PACK.PA.04": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 15,
+      "orientation": "Horizontal",
+      "weight": 5.9,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CP.602": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 5.54,
+      "dimensions": [
+        27
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CP.619": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 5.54,
+      "dimensions": [
+        27
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CP.626": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 5.54,
+      "dimensions": [
+        27
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CP.640": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 5.54,
+      "dimensions": [
+        27
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.CP.657": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 5.54,
+      "dimensions": [
+        27
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.ES.206": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 7.399999999999999,
+      "dimensions": [
+        28,
+        20,
+        15
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.ES.213": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 7.399999999999999,
+      "dimensions": [
+        28,
+        20,
+        15
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.ES.237": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 7.399999999999999,
+      "dimensions": [
+        28,
+        20,
+        15
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.ES.244": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 7.399999999999999,
+      "dimensions": [
+        28,
+        20,
+        15
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "JG.ES.251": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 7.399999999999999,
+      "dimensions": [
+        28,
+        20,
+        15
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.541": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.589": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.510": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 1.64,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.527": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 1.64,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.497": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.503": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.473": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "MO.CO.480": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 12,
+      "orientation": "Horizontal",
+      "weight": 2.06,
+      "dimensions": [
+        37,
+        13,
+        7
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "AT.CO.408": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.415": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.422": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.538": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.392": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.378": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.385": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.484": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.453": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.507": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.439": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.446": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.491": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.514": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.521": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.44,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 11.92,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.CO.460": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.16,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 9.68,
+      "dimensions": [
+        54,
+        24,
+        14
+      ]
+    }
+  },
+  "AT.PA.576": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.590": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.613": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.620": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.583": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.606": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AT.PA.637": {
+    "fragility": "Medium",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 0.96,
+      "dimensions": [
+        24,
+        14,
+        8
+      ]
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Horizontal",
+      "weight": 8.08,
+      "dimensions": [
+        57,
+        17,
+        18
+      ]
+    }
+  },
+  "AB.CO.873": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.880": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.897": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.903": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.061": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.078": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.910": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.927": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.030": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.934": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.941": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.972": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.965": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.958": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.023": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.047": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.016": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.989": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.092": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.122": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.115": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.054": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.108": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.085": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.139": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "AB.CO.146": {
+    "fragility": "Strong",
+    "box1": {
+      "units": 8,
+      "orientation": "Horizontal",
+      "weight": 1.48,
+      "dimensions": []
+    },
+    "box2": {
+      "units": 64,
+      "orientation": "Both",
+      "weight": 12.24,
+      "dimensions": [
+        43,
+        25,
+        25
+      ]
+    }
+  },
+  "CWS.SAR.01": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.02": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.03": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.04": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.05": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.06": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.07": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  },
+  "CWS.SAR.08": {
+    "fragility": "Fragile",
+    "box1": {
+      "units": 6,
+      "orientation": "Horizontal",
+      "weight": 1.28,
+      "dimensions": [
+        20,
+        13,
+        16
+      ]
+    },
+    "box2": {
+      "units": null,
+      "orientation": null,
+      "weight": null,
+      "dimensions": []
+    }
+  }
+}
