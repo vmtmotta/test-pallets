@@ -93,26 +93,22 @@ document.getElementById('go').addEventListener('click', async () => {
   // 6) Expand each order into individual box instances
   let instances = [];
   orders.forEach(o => {
-    const pd = products[o.sku];
-    const spec = pd[o.boxKey];
-    if (!spec || !spec.units) {
-      console.warn(`Missing box spec for ${o.sku} → ${o.boxKey}`);
-      return;
-    }
-    const count = Math.ceil(o.units / spec.units);
-    const [L, D, H] = spec.dimensions;
-    for (let k = 0; k < count; k++) {
-      instances.push({
-  sku:       o.sku,
-  name:      o.name,
-  fragility: pd.fragility.toLowerCase(),
-  weight:    spec.weight,
-  dims:      { l:L, w:D, h:H },
-- canRotate: spec.orientation.toLowerCase() === 'both'
-+ canRotate: true
+  const pd   = products[o.sku];
+  const spec = pd[o.boxKey];
+  if (!spec || !spec.units) return;
+  const count = Math.ceil(o.units / spec.units);
+  const [L, D, H] = spec.dimensions;
+  for (let k = 0; k < count; k++) {
+    instances.push({
+      sku:       o.sku,
+      name:      o.name,
+      fragility: pd.fragility.toLowerCase(),
+      weight:    spec.weight,
+      dims:      { l: L, w: D, h: H },
+      canRotate: true,    // <— here
+    });
+  }
 });
-    }
-  });
   if (!instances.length) {
     return document.getElementById('output').innerHTML =
       '<p><em>No boxes to pack after expansion.</em></p>';
