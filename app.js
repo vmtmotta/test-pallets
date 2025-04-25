@@ -8,7 +8,6 @@ const PALLET_MAX_WT = 600;  // kg including pallet
 const PALLET_WT     =  25;  // kg empty pallet
 
 let products = {};
-
 window.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch(`products-detail.json?cb=${Date.now()}`);
@@ -26,13 +25,13 @@ document.getElementById('go').addEventListener('click', async () => {
     return alert('Enter a customer name and select an Excel file.');
   }
 
-  // 1) read workbook
+  // 1) Read workbook
   const buf = await fileIn.files[0].arrayBuffer();
   const wb  = XLSX.read(buf, { type:'array' });
   const ws  = wb.Sheets[wb.SheetNames[0]];
   const rows= XLSX.utils.sheet_to_json(ws, { header:1, raw:true, blankrows:false });
 
-  // 2) find header
+  // 2) Detect header
   const LABELS = ['REF','PRODUCT','BOX USED (BOX1 OR BOX2)','ORDER IN UNITS'];
   let hr=-1, ci={};
   for (let i=0; i<Math.min(rows.length,20); i++){
@@ -52,7 +51,7 @@ document.getElementById('go').addEventListener('click', async () => {
     return alert('Could not find header row with REF / PRODUCT / BOX USED / ORDER IN UNITS.');
   }
 
-  // 3) parse orders
+  // 3) Parse orders
   const orders = [];
   for (let i=hr+1; i<rows.length; i++){
     const r=rows[i], raw=r[ci.REF];
@@ -71,14 +70,14 @@ document.getElementById('go').addEventListener('click', async () => {
       '<p><em>No valid order lines found. Check your file.</em></p>';
   }
 
-  // 4) expand into box‐instances
-  let instances=[];
+  // 4) Expand into box instances
+  let instances = [];
   orders.forEach(o=>{
-    const pd = products[o.sku], spec=pd[o.boxKey];
+    const pd = products[o.sku], spec = pd[o.boxKey];
     if (!spec||!spec.units) return;
-    const cnt = Math.ceil(o.units/spec.units);
-    const [L,D,H] = spec.dimensions;
-    for(let k=0;k<cnt;k++){
+    const cnt = Math.ceil(o.units/spec.units),
+          [L,D,H] = spec.dimensions;
+    for (let k=0; k<cnt; k++){
       instances.push({
         sku:       o.sku,
         name:      o.name,
@@ -94,20 +93,20 @@ document.getElementById('go').addEventListener('click', async () => {
       '<p><em>No boxes to pack after expansion.</em></p>';
   }
 
-  // 5) sort by fragility
+  // 5) Sort by fragility
   const orderF={strong:0,medium:1,fragile:2};
   instances.sort((a,b)=>orderF[a.fragility]-orderF[b.fragility]);
 
-  // 6) pack into pallets
+  // 6) Pack into pallets
   let remaining=instances.slice(), pallets=[];
-  while(remaining.length){
+  while (remaining.length){
     let usedH=0, usedWT=PALLET_WT;
     const pal={layers:[]};
-    while(remaining.length){
-      const {placed,notPlaced} = packLayer(remaining);
+    while (remaining.length){
+      const {placed, notPlaced} = packLayer(remaining);
       if (!placed.length) break;
-      const layerH  = Math.max(...placed.map(x=>x.box.dims.h));
-      const layerWT = placed.reduce((s,x)=>s+x.box.weight,0);
+      const layerH  = Math.max(...placed.map(x=>x.box.dims.h)),
+            layerWT = placed.reduce((s,x)=>s+x.box.weight,0);
       if (usedH+layerH>PALLET_MAX_H || usedWT+layerWT>PALLET_MAX_WT) break;
       pal.layers.push({boxes:placed,height:layerH,weight:layerWT});
       usedH  += layerH;
@@ -117,7 +116,7 @@ document.getElementById('go').addEventListener('click', async () => {
     pallets.push(pal);
   }
 
-  // 7) render output
+  // 7) Render
   let html=`<h1>${customer}</h1>`,
       totBoxes=0, totUnits=0, totWT=0;
 
@@ -133,10 +132,10 @@ document.getElementById('go').addEventListener('click', async () => {
           </tr></thead><tbody>`;
       const cnt = {};
       ly.boxes.forEach(b=>cnt[b.box.sku]=(cnt[b.box.sku]||0)+1);
-      for(const [sku,n] of Object.entries(cnt)){
-        const o=orders.find(x=>x.sku===sku);
-        const per=products[sku][o.boxKey].units;
-        const u=per*n;
+      for (const [sku,n] of Object.entries(cnt)){
+        const o = orders.find(x=>x.sku===sku),
+              per = products[sku][o.boxKey].units,
+              u = per*n;
         html+=`<tr>
           <td>${sku}</td>
           <td>${o.name}</td>
@@ -155,76 +154,90 @@ document.getElementById('go').addEventListener('click', async () => {
       ${pUnits} units | ${pBoxes} Boxes |
       Total Weight: ${pWT.toFixed(1)} Kg |
       Total Height: ${pH} cm</p>`;
-    totBoxes+=pBoxes; totUnits+=pUnits; totWT+=pWT;
+    totBoxes+=pBoxes;
+    totUnits+=pUnits;
+    totWT+=pWT;
   });
 
   html+=`<h2>ORDER RESUME:</h2>
     <p>Total Pallets: ${pallets.length}<br>
        Total Weight: ${totWT.toFixed(1)} Kg</p>`;
-
-  document.getElementById('output').innerHTML=html;
+  document.getElementById('output').innerHTML = html;
 });
 
-// 2‐mode packLayer: if all same‐SKU & same dims, use fast “5+2” split
+
+// === packLayer now picks the single largest SKU/dims group ===
 function packLayer(boxes){
-  const first = boxes[0];
-  const homogeneous = boxes.every(b=>
-    b.sku===first.sku &&
-    b.dims.l===first.dims.l &&
-    b.dims.w===first.dims.w
-  );
-  if (homogeneous){
-    return homogeneousPack(boxes);
+  // group by sku+footprint
+  const map = new Map();
+  boxes.forEach(b=>{
+    const key = `${b.sku}|${b.dims.l}x${b.dims.w}`;
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(b);
+  });
+  // find the largest group
+  let maxGroup=[], maxKey=null;
+  for (const [k,arr] of map) {
+    if (arr.length>maxGroup.length) {
+      maxGroup = arr;
+      maxKey   = k;
+    }
   }
+  // if >1 box in that group, do the 5+2 homogeneous pack
+  if (maxGroup.length>1) {
+    const {placed, notPlaced: leftoverGroup} = homogeneousPack(maxGroup);
+    // remove 'placed' from the global boxes
+    const notPlaced = boxes.slice();
+    placed.forEach(p=>{
+      const idx = notPlaced.indexOf(p.box);
+      if (idx>=0) notPlaced.splice(idx,1);
+    });
+    return {placed, notPlaced};
+  }
+  // otherwise fallback
   return guillotinePack(boxes);
 }
 
-// fast 2‐row “5 across + rotated 2 across” for identical boxes
+// fast “5 + 2” split for identical dims
 function homogeneousPack(boxes){
   const b = boxes[0];
   const opts = [
-    { l:b.dims.l, w:b.dims.w },
-    { l:b.dims.w, w:b.dims.l }
+    {l:b.dims.l, w:b.dims.w},
+    {l:b.dims.w, w:b.dims.l}
   ];
-  // row1 picks orientation maximizing count
-  let row1={count:-1,opt:null,h:0};
+  // row1: best orientation along pallet length
+  let r1={count:-1,opt:null,h:0};
   opts.forEach(o=>{
-    const cnt = Math.floor(PALLET_L/o.l);
-    if (cnt>row1.count){
-      row1={count:cnt,opt:o,h:o.w};
+    const c = Math.floor(PALLET_L/o.l);
+    if (c>r1.count) r1={count:c,opt:o,h:o.w};
+  });
+  // row2: try stacking over row1
+  const remH = PALLET_W - r1.h;
+  let r2={count:0,opt:null};
+  opts.forEach(o=>{
+    if (o.w<=remH) {
+      const c = Math.floor(PALLET_L/o.l);
+      if (c>r2.count) r2={count:c,opt:o};
     }
   });
-  // row2 fits in remaining width
-  const remH = PALLET_W - row1.h;
-  let row2={count:0,opt:null};
-  opts.forEach(o=>{
-    if (o.w<=remH){
-      const cnt = Math.floor(PALLET_L/o.l);
-      if (cnt>row2.count){
-        row2={count:cnt,opt:o};
-      }
-    }
-  });
+  // place them
   const placed=[];
-  // place row1
-  for(let i=0;i<row1.count;i++){
-    placed.push({box:b,x:i*row1.opt.l,y:0,dims:row1.opt});
+  // row1 at y=0
+  for(let i=0;i<r1.count;i++){
+    placed.push({box:b,x:i*r1.opt.l,y:0,dims:r1.opt});
   }
-  // place row2
-  for(let i=0;i<row2.count;i++){
-    placed.push({box:b,x:i*row2.opt.l,y:row1.h,dims:row2.opt});
+  // row2 at y=row1.h
+  for(let i=0;i<r2.count;i++){
+    placed.push({box:b,x:i*r2.opt.l,y:r1.h,dims:r2.opt});
   }
-  return {
-    placed,
-    notPlaced: boxes.slice(row1.count + row2.count)
-  };
+  // leftover from this group
+  const notPlacedGroup = boxes.slice(r1.count + r2.count);
+  return {placed, notPlaced: notPlacedGroup};
 }
 
-// classic guillotine‐packing
+// classic guillotine pack
 function guillotinePack(boxes){
-  const free=[{x:0,y:0,w:PALLET_L,h:PALLET_W}];
-  const placed=[];
-  let notPlaced=boxes.slice();
+  const free=[{x:0,y:0,w:PALLET_L,h:PALLET_W}], placed=[], notPlaced=boxes.slice();
   boxes.forEach(b=>{
     const opts=[{l:b.dims.l,w:b.dims.w}];
     if (b.canRotate) opts.push({l:b.dims.w,w:b.dims.l});
@@ -244,7 +257,8 @@ function guillotinePack(boxes){
       { x:fit.slot.x+fit.d.l, y:fit.slot.y,       w:fit.slot.w-fit.d.l, h:fit.d.w },
       { x:fit.slot.x,         y:fit.slot.y+fit.d.w, w:fit.slot.w,             h:fit.slot.h-fit.d.w }
     );
-    notPlaced = notPlaced.filter(x=>x!==b);
+    const idx = notPlaced.indexOf(b);
+    if (idx>=0) notPlaced.splice(idx,1);
   });
   return {placed, notPlaced};
 }
