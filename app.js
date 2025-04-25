@@ -1,11 +1,11 @@
 // app.js
 
 // Pallet constraints
-const PALLET_L      = 120;  // cm (length of pallet)
-const PALLET_W      =  80;  // cm (width of pallet)
+const PALLET_L      = 120;  // cm
+const PALLET_W      =  80;  // cm
 const PALLET_MAX_H  = 170;  // cm total stack height
-const PALLET_MAX_WT = 600;  // kg (including empty pallet)
-const PALLET_WT     =  25;  // kg empty pallet weight
+const PALLET_MAX_WT = 600;  // kg including pallet
+const PALLET_WT     =  25;  // kg empty pallet
 
 let products = {};
 
@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// 2) On click → read file, parse orders, pack & render
 document.getElementById('go').addEventListener('click', async () => {
   const customer = document.getElementById('customer').value.trim();
   const fileIn   = document.getElementById('fileInput');
@@ -27,20 +28,20 @@ document.getElementById('go').addEventListener('click', async () => {
     return alert('Enter a customer name and select an Excel file.');
   }
 
-  // 2) Read workbook & first sheet
+  // Read workbook & first sheet
   const buf = await fileIn.files[0].arrayBuffer();
   const wb  = XLSX.read(buf, { type:'array' });
   const sheetName = wb.SheetNames[0];
   const ws = wb.Sheets[sheetName];
 
-  // 3) Get all rows as arrays
+  // Get all rows as arrays
   const rows = XLSX.utils.sheet_to_json(ws, {
     header: 1,
     raw:    true,
     blankrows: false
   });
 
-  // 4) Detect header row (looking for REF, PRODUCT, BOX USED..., ORDER IN UNITS)
+  // Detect header row (REF, PRODUCT, BOX USED..., ORDER IN UNITS)
   const labels = [
     'REF',
     'PRODUCT',
@@ -67,21 +68,18 @@ document.getElementById('go').addEventListener('click', async () => {
     return alert('Could not find header row with REF / PRODUCT / BOX USED / ORDER IN UNITS.');
   }
 
-  // 5) Parse orders from rows[h+1...] until blank REF, only valid SKUs
+  // Parse orders from rows[h+1...] until blank REF, only valid SKUs
   const orders = [];
   for (let i = h + 1; i < rows.length; i++) {
-    const r   = rows[i];
-    const raw = r[ci.REF];
+    const r  = rows[i];
+    const raw= r[ci.REF];
     if (raw == null || raw.toString().trim() === '') break;
     const sku = raw.toString().trim();
-    if (!products[sku]) {
-      // skip any calibration or unknown rows
-      continue;
-    }
+    if (!products[sku]) continue; // skip unknown
     orders.push({
       sku,
       name:   r[ci.PROD]?.toString().trim() || sku,
-      boxKey: r[ci.BOX]?.toString().trim().toLowerCase(), // "box1" or "box2"
+      boxKey: r[ci.BOX]?.toString().trim().toLowerCase(), // "box1"/"box2"
       units:  Number(r[ci.UNITS]) || 0
     });
   }
@@ -90,7 +88,7 @@ document.getElementById('go').addEventListener('click', async () => {
       '<p><em>No valid order lines found. Check your file.</em></p>';
   }
 
-  // 6) Expand each order into individual box instances
+  // Expand each order into individual box instances
   let instances = [];
   orders.forEach(o => {
     const pd   = products[o.sku];
@@ -99,7 +97,7 @@ document.getElementById('go').addEventListener('click', async () => {
       console.warn(`Missing box spec for ${o.sku} → ${o.boxKey}`);
       return;
     }
-    const count    = Math.ceil(o.units / spec.units);
+    const count = Math.ceil(o.units / spec.units);
     const [L, D, H] = spec.dimensions;
     for (let k = 0; k < count; k++) {
       instances.push({
@@ -117,11 +115,11 @@ document.getElementById('go').addEventListener('click', async () => {
       '<p><em>No boxes to pack after expansion.</em></p>';
   }
 
-  // 7) Sort by fragility (strong → medium → fragile)
+  // Sort by fragility (strong → medium → fragile)
   const fragOrder = { strong:0, medium:1, fragile:2 };
   instances.sort((a,b) => fragOrder[a.fragility] - fragOrder[b.fragility]);
 
-  // 8) Guillotine‐pack into pallets
+  // Guillotine‐pack into pallets
   let remaining = instances.slice(), pallets = [];
   while (remaining.length) {
     let usedH = 0, usedWT = PALLET_WT;
@@ -142,7 +140,7 @@ document.getElementById('go').addEventListener('click', async () => {
     pallets.push(pal);
   }
 
-  // 9) Render result
+  // Render result
   let html = `<h1>${customer}</h1>`;
   let totalBoxes=0, totalUnits=0, totalWT=0;
 
@@ -161,7 +159,6 @@ document.getElementById('go').addEventListener('click', async () => {
           </thead>
           <tbody>`;
 
-      // count how many of each SKU got placed
       const cnt = {};
       ly.boxes.forEach(b => cnt[b.box.sku] = (cnt[b.box.sku]||0) + 1);
       Object.entries(cnt).forEach(([sku, n]) => {
@@ -201,28 +198,26 @@ document.getElementById('go').addEventListener('click', async () => {
   document.getElementById('output').innerHTML = html;
 });
 
-// Guillotine‐style pack for one layer, with “best‐orientation‐first”:
+// ----------------------------------------------------------------------------
+// Guillotine‐style pack for one layer, with true two‐orientation best‐fit
 function packLayer(boxes) {
-  const free      = [{ x:0, y:0, w:PALLET_L, h:PALLET_W }];
-  const placed    = [];
-  let notPlaced   = boxes.slice();
+  const free    = [{ x:0, y:0, w:PALLET_L, h:PALLET_W }];
+  const placed  = [];
+  let notPlaced = boxes.slice();
 
   boxes.forEach(b => {
-    // 1) Compute how many fit in each orientation on a full layer
+    // Determine which orientation yields more potential fits
     const L = b.dims.l, W = b.dims.w;
     const countA = Math.floor(PALLET_L / L) * Math.floor(PALLET_W / W);
-    const countB = Math.floor(PALLET_L / W) * Math.floor(PALLET_W / L);
+    const countB = b.canRotate
+      ? Math.floor(PALLET_L / W) * Math.floor(PALLET_W / L)
+      : -1;
 
-    // 2) Build the try‐list in descending count order
-    let opts = [];
-    if (b.canRotate && countB > countA) {
-      opts = [{ l: W, w: L }, { l: L, w: W }];
-    } else {
-      opts = [{ l: L, w: W }];
-      if (b.canRotate) opts.push({ l: W, w: L });
-    }
+    const opts = countB > countA
+      ? [{ l:W, w:L }, { l:L, w:W }]
+      : [{ l:L, w:W }].concat(b.canRotate ? [{ l:W, w:L }] : []);
 
-    // 3) Find the first free rect that fits one of the opts
+    // Find a free slot
     let fit = null;
     for (const r of free) {
       for (const d of opts) {
@@ -233,17 +228,28 @@ function packLayer(boxes) {
       }
       if (fit) break;
     }
-    if (!fit) return;  // this box can't go in this layer
+    if (!fit) return;
 
-    // 4) Place it and split the free region
+    // Place it
     placed.push({ box:b, x:fit.rect.x, y:fit.rect.y, dims:fit.dims });
     free.splice(free.indexOf(fit.rect), 1);
-    free.push(
-      { x: fit.rect.x + fit.dims.l, y: fit.rect.y,       w: fit.rect.w - fit.dims.l, h: fit.dim​s.w },
-      { x: fit.rect.x,             y: fit.rect.y + fit.dim​s.w, w: fit.rect.w,             h: fit.rect.h - fit.dims.w }
-    );
 
-    // 5) Remove from notPlaced
+    // Carve out right region
+    free.push({
+      x: fit.rect.x + fit.dims.l,
+      y: fit.rect.y,
+      w: fit.rect.w - fit.dims.l,
+      h: fit.dims.w
+    });
+    // Carve out top region
+    free.push({
+      x: fit.rect.x,
+      y: fit.rect.y + fit.dims.w,
+      w: fit.rect.w,
+      h: fit.rect.h - fit.dims.w
+    });
+
+    // Remove from notPlaced
     notPlaced = notPlaced.filter(x => x !== b);
   });
 
